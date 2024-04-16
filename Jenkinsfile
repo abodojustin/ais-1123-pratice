@@ -61,5 +61,16 @@ pipeline {
                 }
             }
         }
+        
+        stage('Release/Package') {
+            steps {
+                script {
+                    sh '''
+                        echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin
+                        docker push $PREFIX_IMAGE/$IMAGE_NAME:$IMAGE_TAG
+                    '''
+                }
+            }
+        }
     }
 }
