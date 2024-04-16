@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = 'ais-website'
         IMAGE_TAG = 'v1'
-        PREFIX_NAME = 'abodojustin'
+        PREFIX_IMAGE = 'abodojustin'
     }
 
     stages {
